@@ -1,1 +1,1 @@
-res.send('testapi.js');
+res.send('testapi.js --- ' +  new Date().toString());
