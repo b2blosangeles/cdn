@@ -1,4 +1,4 @@
-res.send(__dirname + 'tt.js');
+
 res.send(env);
 var path = require('path');
 /*
