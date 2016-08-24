@@ -1,7 +1,8 @@
 //(function(pkg, res) {
-	pkg.db.git_log.find({}, { multi: true }).sort({ time: -1 }).exec(function (err, docs) {
+var git_log =  new pkg.Nedb({ filename: env.root_path + '_db/git_log.db', autoload: true });
+	git_log.find({}, { multi: true }).sort({ time: -1 }).exec(function (err, docs) {
 		if (!err) {
-			res.send(env)
+			res.send(docs)
 		} else {
 			res.send(err)
 		}
