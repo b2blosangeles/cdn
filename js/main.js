@@ -5,7 +5,7 @@ var app = angular.module('qaletApp', [
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout, $sce){ 
 	$scope.getVhostList = function(data) {
 		var list  = [];
-		for(var i=0; i< data.longth; i++) {
+		for(var i=0; i< data.length; i++) {
 			console.log(data[i].data);
 			for (var k in data[i].data.results) {
 				if (list.indexOf(k) == -1) {
