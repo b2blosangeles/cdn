@@ -3,7 +3,18 @@ var app = angular.module('qaletApp', [
 	'ngRoute'
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout, $sce){ 
-
+	$scope.loadGitLog = function() {
+		$http({
+		  method: 'GET',
+		  url: '/api/git_log.js',
+		  data: v
+		}).then(function successCallback(response) {
+			console.log(response);
+		  }, function errorCallback(response) {	
+			console.log(response);						
+		});			
+	};
+	$scope.loadGitLog();
 });
 app.config(function($routeProvider) {
 	$routeProvider.when('/cron_log',   {templateUrl: '/view/homepage.html', reloadOnSearch: false});
