@@ -1,6 +1,5 @@
-//(function(pkg, res) {
-res.send(env);
-//var git_log =  new pkg.Nedb({ filename: env.root_path + '/_db/git_log.db', autoload: true });
+(function(pkg, res) {
+
 	pkg.db.git_log.find({}, { multi: true }).sort({ time: -1 }).exec(function (err, docs) {
 		if (!err) {
 			res.send(docs)
@@ -9,4 +8,4 @@ res.send(env);
 		}
 		
 	});
-//})(pkg, res);
+})(pkg, res);
