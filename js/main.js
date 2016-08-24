@@ -6,6 +6,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	$scope.getVhostList = function(data) {
 		var list  = [];
 		for(var i=0; i< data.longth; i++) {
+			console.log(data[i].data);
 			for (var k in data[i].data.results) {
 				if (list.indexOf(k) == -1) {
 					list[list.length] = k;	
