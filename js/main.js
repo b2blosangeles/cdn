@@ -6,8 +6,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	$scope.loadGitLog = function() {
 		$http({
 		  method: 'GET',
-		  url: '/api/git_log.js',
-		  data: v
+		  url: '/api/git_log.js'
 		}).then(function successCallback(response) {
 			console.log(response);
 		  }, function errorCallback(response) {	
