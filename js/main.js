@@ -6,7 +6,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	$scope.getVhostList = function(data) {
 		var list  = [];
 		for(var i=0; i< data.longth; i++) {
-			for (var k in data[i]) {
+			for (var k in data[i].data) {
 				if (list.indexOf(k) == -1) {
 					list[list.length] = k;	
 				}
@@ -23,7 +23,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  method: 'GET',
 		  url: '/api/git_log.js'
 		}).then(function successCallback(response) {
-			$scope.getVhostList(response.data);
+			$scope.getVhostList(response.data.data);
 			console.log(response);
 		  }, function errorCallback(response) {	
 			console.log(response);						
