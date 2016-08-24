@@ -1,1 +1,1 @@
-res.send('env' + new Date().toString());
+res.sendFile('/var/log/qalet_cron.log');
