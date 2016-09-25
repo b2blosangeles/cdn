@@ -8,7 +8,7 @@ busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
 
       file.on('data', function(data) {
           //io.to(socket_id).emit('messages', 'File [' + fieldname + '] got ' + data.length + ' bytes');
-          io.to(socket_id).emit('messages', {code:'progress', bytes:data.length});
+          io.to(socket_id).emit('message', {code:'progress', bytes:data.length});
       });
       file.on('end', function() {
         res.send('File [' + fieldname + '] Finished');
