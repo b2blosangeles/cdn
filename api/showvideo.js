@@ -1,6 +1,7 @@
-var path = env.space_path + '/videos/' + req.param('video');
+var fn = env.space_path + '/videos/' + req.param('video');
+res.send(fn)
   var fs = require(fs);
-  fs.stat(path, function(err, data) {
+  fs.stat(fv, function(err, data) {
     if (err) 
       res.send('it does not exist');
     else {
@@ -16,13 +17,13 @@ var path = env.space_path + '/videos/' + req.param('video');
         var chunksize = (end-start)+1;
         console.log('RANGE: ' + start + ' - ' + end + ' = ' + chunksize);
 
-        var file = fs.createReadStream(path, {start: start, end: end});
+        var file = fs.createReadStream(fn, {start: start, end: end});
         res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' });
         file.pipe(res);
       } else {
         console.log('ALL: ' + total);
         res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
-        fs.createReadStream(path).pipe(res);
+        fs.createReadStream(fn).pipe(res);
       }
 
     }
