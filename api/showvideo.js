@@ -1,5 +1,5 @@
 var fn = env.space_path + '/videos/' + req.param('video');
-
+res.send(fn);
   var fs = require(fs);
   fs.stat(fv, function(err, data) {
     if (err) 
