@@ -1,42 +1,25 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="http://qalet.com/image/logo_icon/favicon-16x16.png">
-    <title>Qalet</title>
-	
-    <link href="http://qalet.com/css/bootstrap.min.css" rel="stylesheet">
-	<link href="http://qalet.com/css/docs.min.css" rel="stylesheet">
-	<link href="http://qalet.com/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
-	
-	
-	<link href="http://qalet.com/css/main_index.css" rel="stylesheet">
-	
-	<script src="http://qalet.com/js/jquery.min.js"></script>
-	<script src="http://qalet.com/js/bootstrap.min.js"></script>
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<script src="http://qalet.com/js/angular.min.js"></script>
-	<script src="http://qalet.com/js/angular-cookies.min.js"></script>		
-	<script src="http://qalet.com/js/angular-route.min.js"></script>	
-	<script src="js/main.js"></script>
-	
+   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>	
 </head>
 
-<body ng-app="qaletApp" ng-controller="mainController">
-	<ng-view></ng-view>
+<body>
+    test
 </body>
 </html>
-https://github.com/WickyNilliams/headroom.js
+<script>
+	var qaletSocket = io.connect('/');
+    /*
+	socket.on('connect', function(data) {
+		console.log(data);
+        socket.emit('join', 'Hello World from client -->' + socket.id);
+    });
+	*/
+    qaletSocket.on('message', function(data) {
+		console.log('message in --->' + qaletSocket.id);
+		console.log(data);
+		console.log('after message in--->');
+    });
+
+</script>
