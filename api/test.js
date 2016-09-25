@@ -1,1 +1,1 @@
-res.send('hello');
+res.send(env);
