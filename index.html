@@ -18,7 +18,7 @@
     });
 	*/
 	setInterval(function() {
-		qaletSocket.emit('send', {from: qaletSocket.id, message:'Hello World from client', sent:new Date()});
+		qaletSocket.emit('send', {from: qaletSocket.id, to: qaletSocket.id, message:'Hello World from client', sent:new Date()});
 	}, 1000);
 	
 	
