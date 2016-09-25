@@ -36,7 +36,12 @@
 	
 	
     qaletSocket.on('message', function(data) {
-	 $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
+	    if (data.progress) {
+	    	 $('.income_msg').html(JSON.stringify(data) );
+	    } else {
+	    	 $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
+	    }
+	
 	    /*
 		console.log('message in --->' + qaletSocket.id);
 		console.log(data);
