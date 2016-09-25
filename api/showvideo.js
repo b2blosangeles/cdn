@@ -1,4 +1,6 @@
-  var path = req.params[0];
+  res.send(env); 
+var path = 'videos/' + req.param('video');
+
   var fs = require(fs);
   fs.stat(path, function(err, data) {
     if (err) 
