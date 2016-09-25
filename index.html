@@ -36,8 +36,8 @@
 	
 	
     qaletSocket.on('message', function(data) {
-	    if (data.progress) {
-	    	 $('.income_msg').html(JSON.stringify(data) );
+	    if (data.code == 'progress') {
+	    	 $('.income_msg').html(data.bytes );
 	    } else {
 	    	 $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
 	    }
