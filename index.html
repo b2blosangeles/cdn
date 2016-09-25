@@ -25,7 +25,7 @@
 	var qaletSocket = io.connect('/');
 	
 	    qaletSocket.on('connect', function(data) {
-		document.getElementById('uploadform').action='/' + qaletSocket.id;
+		document.getElementById('uploadform').action='/api/test.js?socket_id=' + qaletSocket.id;
 	      //  http://localhost:4200/
 	      //  socket.emit('join', 'Hello World from client -->' + socket.id);
 	    });
