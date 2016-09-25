@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script src="/js/socket.io-1.4.5.js"></script>	
+   <script src="/js/socket.io-1.4.5.js"></script>
+   <script src="http://qalet.com/js/jquery.min.jss"></script>
 </head>
 
 <body>
-    test
+    <div class="income_msg"></div>
 </body>
 </html>
 <script>
@@ -17,9 +18,12 @@
     });
 	*/
     qaletSocket.on('message', function(data) {
+	 $('.income_msg').html( $('.income_msg').html()  + data);
+	    /*
 		console.log('message in --->' + qaletSocket.id);
 		console.log(data);
 		console.log('after message in--->');
+		*/
     });
 
 </script>
