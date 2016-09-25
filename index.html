@@ -17,6 +17,11 @@
         socket.emit('join', 'Hello World from client -->' + socket.id);
     });
 	*/
+	setInterval(function() {
+		socket.emit('sned', {from: socket.id, message:'Hello World from client'});
+	}, 1000);
+	
+	
     qaletSocket.on('message', function(data) {
 	 $('.income_msg').html(data + '<hr>' + $('.income_msg').html() );
 	    /*
