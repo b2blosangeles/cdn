@@ -1,6 +1,6 @@
 var fn = env.space_path + '/videos/' + req.param('video');
 
-  var fs = require(fs);
+  var fs = require('fs');
   fs.stat(fn, function(err, data) {
     if (err) 
       res.send('it does not exist');
