@@ -12,11 +12,13 @@ busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
       
       file.on('end', function() {
             io.to(socket_id).emit('message', 'done!!');
+            res.send('Done!');
       });
     });
 
 busboy.on('finish', function() {
        io.to(socket_id).emit('message', 'done--!!');
+      res.send('Done!');
 });
-// return req.pipe(busboy);
-res.send('Done!');
+return req.pipe(busboy);
+
