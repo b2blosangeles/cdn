@@ -7,7 +7,6 @@ var fn = env.space_path + '/videos/' + req.param('video');
     else {
       var total = data.size;
       if (req.headers['range']) {
-        res.send('FB');
         var range = req.headers.range;
         var parts = range.replace(/bytes=/, "").split("-");
         var partialstart = parts[0];
@@ -22,7 +21,6 @@ var fn = env.space_path + '/videos/' + req.param('video');
         res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' });
         file.pipe(res);
       } else {
-        res.send('FA');
         console.log('ALL: ' + total);
         res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
         fs.createReadStream(fn).pipe(res);
