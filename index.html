@@ -18,7 +18,7 @@
     });
 	*/
     qaletSocket.on('message', function(data) {
-	 $('.income_msg').html( $('.income_msg').html()  + data);
+	 $('.income_msg').html(data + '<hr>' + $('.income_msg').html() );
 	    /*
 		console.log('message in --->' + qaletSocket.id);
 		console.log(data);
