@@ -23,12 +23,13 @@
 </html>
 <script>
 	var qaletSocket = io.connect('/');
-    /*
-	socket.on('connect', function(data) {
-		console.log(data);
-        socket.emit('join', 'Hello World from client -->' + socket.id);
-    });
-	*/
+	
+	    qaletSocket.on('connect', function(data) {
+		document.getElementById('uploadform').action='/' + qaletSocket.id;
+	      //  http://localhost:4200/
+	      //  socket.emit('join', 'Hello World from client -->' + socket.id);
+	    });
+
 	setInterval(function() {
 	//	qaletSocket.emit('IM', {from: qaletSocket.id, to: qaletSocket.id, message:'Hello World from client', sent:new Date()});
 	}, 1000);
