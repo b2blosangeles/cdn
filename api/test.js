@@ -4,7 +4,7 @@ var socket_id = '/#' + req.param('socket_id');
 var busboy = new Busboy({ headers: req.headers });
 busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
 
-        file.pipe(fs.createWriteStream('niuC.mp4'));
+       // file.pipe(fs.createWriteStream('niuC.mp4'));
 
       file.on('data', function(data) {
           //io.to(socket_id).emit('messages', 'File [' + fieldname + '] got ' + data.length + ' bytes');
