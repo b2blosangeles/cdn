@@ -5,7 +5,7 @@ var busboy = new Busboy({ headers: req.headers });
 
 busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
 
-      file.pipe(fs.createWriteStream(env.space_path+'/videos/'+fieldname));
+      file.pipe(fs.createWriteStream(env.space_path+'/videos/'+filedname));
       file.on('data', function(data) {
           io.to(socket_id).emit('message', {code:'progress', bytes:data.length});
       });
