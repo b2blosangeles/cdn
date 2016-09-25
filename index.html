@@ -18,6 +18,7 @@
     });
 	*/
 	setInterval(function() {
+		console.log(new Date());
 		qaletSocket.emit('sned', {from: qaletSocket.id, message:'Hello World from client', sent:new Date()});
 	}, 1000);
 	
