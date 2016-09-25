@@ -1,6 +1,6 @@
 var Busboy = require(env.root_path + '/package/busboy/node_modules/busboy');
 var socket_id = '/#' + req.param('socket_id');
-var fs = require(fs);
+var fs = require('fs');
 var busboy = new Busboy({ headers: req.headers });
 res.send(env);
 return ture;
