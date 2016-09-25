@@ -19,7 +19,7 @@
 	*/
 	setInterval(function() {
 		console.log(qaletSocket.id);
-		qaletSocket.emit('sned', "{from: qaletSocket.id, message:'Hello World from client', sent:new Date()}");
+		qaletSocket.emit('send', "{from: qaletSocket.id, message:'Hello World from client', sent:new Date()}");
 		console.log('-------------------');
 	}, 1000);
 	
