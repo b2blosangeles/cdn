@@ -22,10 +22,23 @@
 </body>
 </html>
 <script>
+	function  {
+		$.ajax({
+		  url: 'http://vr.qalet.com/api/showvideolist.js',
+		  data: {},
+		  success: function(data) {
+		  	console.log(data);
+		  },
+		  dataType: 'JSON'
+		});	
+	}	
+	
+	
 	var qaletSocket = io.connect('/');
 	
 	    qaletSocket.on('connect', function(data) {
 		document.getElementById('uploadform').action='/api/test.js?socket_id=' + qaletSocket.id;
+		    loadList();
 	      //  http://localhost:4200/
 	      //  socket.emit('join', 'Hello World from client -->' + socket.id);
 	    });
