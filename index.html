@@ -33,7 +33,7 @@
 			var s = '';
 			for (var i=0; i< data.length; i++) {
 				s += '<br/><a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
-				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\"'+data[i]+'\")"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
+				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\''+data[i]+'\')"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
 				s += '<br/>';
 			}	
 			$('.video_list').html(s);  
