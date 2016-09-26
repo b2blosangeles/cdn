@@ -32,16 +32,32 @@
 		  success: function(data) {
 			var s = '';
 			for (var i=0; i< data.length; i++) {
-				s += '<a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
+				s += '<br/><a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
 				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\"'+data[i]+'\")"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
-				s += '<br/><br/>';
+				s += '<br/>';
 			}	
 			$('.video_list').html(s);  
 		  },
 		  dataType: 'JSON'
 		});	
 	}	
-	
+	function  deleteVideo(v) {
+		alert(v);
+		$.ajax({
+		  url: 'http://vr.qalet.com/api/showvideolist.js',
+		  data: {},
+		  success: function(data) {
+			var s = '';
+			for (var i=0; i< data.length; i++) {
+				s += '<br/><a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
+				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\"'+data[i]+'\")"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
+				s += '<br/>';
+			}	
+			$('.video_list').html(s);  
+		  },
+		  dataType: 'JSON'
+		});	
+	}		
 	
 	var qaletSocket = io.connect('/');
 	
