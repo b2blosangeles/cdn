@@ -44,16 +44,10 @@
 	function  deleteVideo(v) {
 		alert(v);
 		$.ajax({
-		  url: 'http://vr.qalet.com/api/showvideolist.js',
-		  data: {},
+		  url: 'http://vr.qalet.com/api/deleteVideo.js',
+		  data: {video_id:v},
 		  success: function(data) {
-			var s = '';
-			for (var i=0; i< data.length; i++) {
-				s += '<br/><a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
-				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\"'+data[i]+'\")"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
-				s += '<br/>';
-			}	
-			$('.video_list').html(s);  
+ 			loadList();
 		  },
 		  dataType: 'JSON'
 		});	
