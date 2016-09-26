@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">		
+   <link rel="stylesheet" href="http://qalet.com/css/font-awesome-4.6.3/css/font-awesome.min.css">		
    <script src="/js/socket.io-1.4.5.js"></script>
    <script src="http://qalet.com/js/jquery.min.js"></script>
 	
@@ -34,7 +34,7 @@
 			for (var i=0; i< data.length; i++) {
 				s += '<a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> ';	
 				s += '<a href="JavaScript:void(0)" onClick="deleteVideo(\"'+data[i]+'\")"><i class="fa fa-trash-o" aria-hidden="true"></i><a>';
-				s += '<br/>';
+				s += '<br/><br/>';
 			}	
 			$('.video_list').html(s);  
 		  },
