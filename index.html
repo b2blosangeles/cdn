@@ -47,6 +47,7 @@
 		  url: 'http://vr.qalet.com/api/deleteVideo.js',
 		  data: {video_id:v},
 		  success: function(data) {
+			console.log(data);  
  			loadList();
 		  },
 		  dataType: 'JSON'
