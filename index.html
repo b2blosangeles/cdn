@@ -58,9 +58,10 @@
 	    if (data.code == 'progress') {
 	    	 $('.income_msg').html(data.bytes );
 	    } else {
-	    	 $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
+	    	// $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
+		    loadList();
 	    }
-	
+		
 	    /*
 		console.log('message in --->' + qaletSocket.id);
 		console.log(data);
