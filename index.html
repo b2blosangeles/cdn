@@ -31,7 +31,7 @@
 		  success: function(data) {
 			var s = '';
 			for (var i=0; i< data.length; i++) {
-				s += data[i]+' '	
+				s += '<a href="/api/showvideo.js?video='+data[i]+'" target="_blank">' + data[i]+'</a> : '	
 			}	
 			$('.video_list').html(s);  
 		  },
