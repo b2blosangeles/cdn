@@ -15,7 +15,7 @@
                 <input type="button" onClick="vv()">
               </form>
               <div id="progress_bar"></div>
-               <iframe name="niu1" style="display:none"></iframe> 
+               <iframe name="niu1" style="display:"></iframe> 
 		<hr>
 		<div class="video_list"></div>
         </span>
@@ -49,11 +49,7 @@
 	      //  socket.emit('join', 'Hello World from client -->' + socket.id);
 	    });
 
-	setInterval(function() {
-	//	qaletSocket.emit('IM', {from: qaletSocket.id, to: qaletSocket.id, message:'Hello World from client', sent:new Date()});
-	}, 1000);
-	
-	
+
     qaletSocket.on('message', function(data) {
 	    if (data.code == 'progress') {
 	    	 $('.income_msg').html(data.bytes );
