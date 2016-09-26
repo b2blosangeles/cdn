@@ -1,4 +1,4 @@
-var fn = env.space_path + '/videos/' + req.param('video');
+var fn = env.space_path + '/videos/' + req.param('video_id');
 res.send(fn);
 /*
   var fs = require('fs');
