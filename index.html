@@ -16,6 +16,8 @@
               </form>
               <div id="progress_bar"></div>
                <iframe name="niu1" style="display:none"></iframe> 
+		<hr>
+		<div id="video_list"></div>
         </span>
     </div>	
     <div class="income_msg"></div>
@@ -27,7 +29,11 @@
 		  url: 'http://vr.qalet.com/api/showvideolist.js',
 		  data: {},
 		  success: function(data) {
-		  	console.log(data);
+			var s = 
+			for (var i=0; i< data.length; i++) {
+				s += data[i]+' '	
+			}	
+			$('.video_list').html = s;  
 		  },
 		  dataType: 'JSON'
 		});	
@@ -37,8 +43,8 @@
 	var qaletSocket = io.connect('/');
 	
 	    qaletSocket.on('connect', function(data) {
-		document.getElementById('uploadform').action='/api/test.js?socket_id=' + qaletSocket.id;
-		    loadList();
+		// document.getElementById('uploadform').action='/api/test.js?socket_id=' + qaletSocket.id;
+		loadList();
 	      //  http://localhost:4200/
 	      //  socket.emit('join', 'Hello World from client -->' + socket.id);
 	    });
