@@ -1,6 +1,11 @@
   var fs = require('fs');
   fs.readdir(env.space_path + '/videos', function(err, data) {
-
-    res.send(data);
+    var ret = [];
+    for (var i=0; i < data.length; i++) {
+      if (data[i].test(/\.mp4$/i)) {
+        ret[ret.length] = data[i];
+      }
+    }
+    res.send(ret);
 
   });
