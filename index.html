@@ -68,7 +68,7 @@
 	    if (data.code == 'progress') {
 	    	 $('.income_msg').html(data.bytes );
 	    } else {
-	    	if (typeof data.js == 'function') {
+	    	if (data.js) {
 		   data.js();	
 		} else {
 		 	loadList();	
