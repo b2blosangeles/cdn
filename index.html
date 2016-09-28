@@ -25,9 +25,10 @@
 </body>
 </html>
 <script>
+	var qaletSocket = io.connect('/');
 	function  loadList() {
 		$.ajax({
-		  url: 'http://vr.qalet.com/api/showvideolist.js',
+		  url: 'http://vr.qalet.com/api/showvideolist.js?socket_id=' + qaletSocket.id,
 		  data: {},
 		  success: function(data) {
 			var s = '';
@@ -53,7 +54,7 @@
 		});	
 	}		
 	
-	var qaletSocket = io.connect('/');
+	
 	
 	    qaletSocket.on('connect', function(data) {
 		document.getElementById('uploadform').action='/api/test.js?socket_id=' + qaletSocket.id;
@@ -67,15 +68,12 @@
 	    if (data.code == 'progress') {
 	    	 $('.income_msg').html(data.bytes );
 	    } else {
-	    	// $('.income_msg').html(JSON.stringify(data) + '<hr>' + $('.income_msg').html() );
-		    loadList();
+	    	if (data.code == 'js') {
+		   data.js();	
+		} else {
+		 	loadList();	
+		}	
 	    }
-		
-	    /*
-		console.log('message in --->' + qaletSocket.id);
-		console.log(data);
-		console.log('after message in--->');
-		*/
     });
 
 </script>
