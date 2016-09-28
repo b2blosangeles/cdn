@@ -8,5 +8,5 @@
       }
     }
     res.send(ret);
-     io.to(socket_id).emit('message', {js:function() {alert('done')}});
+     io.to(socket_id).emit('message', {sid:socket_id,js:function() {alert('done')}});
   });
