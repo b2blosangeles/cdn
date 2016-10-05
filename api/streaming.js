@@ -26,7 +26,8 @@ var fn = env.space_path + '/videos/movie.mp4';
      
      //   console.log('ALL: ' + total);
     //    res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
-        fs.createReadStream(fn).pipe(res);
+    //    fs.createReadStream(fn).pipe(res);
+        res.send('Need streaming player');
       }
 
     }
