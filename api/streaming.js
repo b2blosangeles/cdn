@@ -9,6 +9,9 @@ var fn = env.space_path + '/videos/movie.mp4';
      
    //   if (req.headers['range']) {
         var range = req.headers.range;
+      res.send(range);
+      return true;
+      
         var parts = range.replace(/bytes=/, "").split("-");
         var partialstart = parts[0];
         var partialend = parts[1];
