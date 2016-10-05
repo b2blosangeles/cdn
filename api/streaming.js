@@ -1,6 +1,6 @@
 var fn = env.space_path + '/videos/movie.mp4';
 var fs = require('fs');
-fs.createReadStream('file.txt').pipe(res);
+fs.createReadStream(fn).pipe(res);
 // res.send(env);
 /*
   var fs = require('fs');
