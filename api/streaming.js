@@ -6,6 +6,7 @@ var fn = env.space_path + '/videos/movie.mp4';
       res.send('it does not exist');
     else {
       var total = data.size;
+     /*
       if (req.headers['range']) {
         var range = req.headers.range;
         var parts = range.replace(/bytes=/, "").split("-");
@@ -21,10 +22,11 @@ var fn = env.space_path + '/videos/movie.mp4';
         res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' });
         file.pipe(res);
       } else {
-        console.log('ALL: ' + total);
-        res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
+      */
+     //   console.log('ALL: ' + total);
+    //    res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
         fs.createReadStream(fn).pipe(res);
-      }
+    //  }
 
     }
   });
