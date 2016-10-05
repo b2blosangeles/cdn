@@ -1,5 +1,7 @@
-var fn = env.space_path + '/videos/' + req.param('video');
-res.send(env);
+var fn = env.space_path + '/videos/movie.mp4';
+var fs = require('fs');
+fs.createReadStream('file.txt').pipe(res);
+// res.send(env);
 /*
   var fs = require('fs');
   fs.stat(fn, function(err, data) {
