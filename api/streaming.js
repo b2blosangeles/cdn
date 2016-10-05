@@ -1,7 +1,15 @@
 var fn = env.space_path + '/videos/movie.mp4';
-var fs = require('fs');
-res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
-fs.createReadStream(fn).pipe(res);
+ var fs = require('fs');
+  fs.stat(fn, function(err, data) {
+    if (err) 
+      res.send('it does not exist');
+    else {
+        var total = data.size;
+        console.log('ALL: ' + total);
+        res.writeHead(200, { 'Content-Length': total, 'Content-Type': 'video/mp4' });
+        fs.createReadStream(fn).pipe(res);
+    }
+  });
 // res.send(env);
 /*
   var fs = require('fs');
