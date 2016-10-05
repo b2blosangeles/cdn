@@ -15,8 +15,8 @@ var fn = env.space_path + '/videos/movie.mp4';
         var partialstart = parts[0];
         var partialend = parts[1];
       
-        var partialstart = 0;
-        var partialend = 0;
+       partialstart = 0;
+        partialend = 10;
       
         var start = parseInt(partialstart, 10);
         var end = partialend ? parseInt(partialend, 10) : total-1;
