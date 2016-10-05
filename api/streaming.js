@@ -1,5 +1,6 @@
 var fn = env.space_path + '/videos/' + req.param('video');
-
+res.send(env);
+/*
   var fs = require('fs');
   fs.stat(fn, function(err, data) {
     if (err) 
@@ -28,3 +29,4 @@ var fn = env.space_path + '/videos/' + req.param('video');
 
     }
   });
+*/
