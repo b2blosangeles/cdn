@@ -1,1 +1,1 @@
-{"js/jquery.min.js":2, "js/bootstrap.min.js":2}
+{"jsa":2, "jsbs":2}
