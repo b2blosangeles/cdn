@@ -1,1 +1,1 @@
-==["js/jquery.min.js", "js/bootstrap.min.js"]
+{"js/jquery.min.js":2, "js/bootstrap.min.js":2}
