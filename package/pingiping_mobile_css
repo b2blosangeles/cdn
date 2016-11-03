@@ -1,0 +1,12 @@
+{
+	"contentType": "text/css",
+	"filelist":
+		[
+			"css/bootstrap.min.css", 
+			"css/bootstrap-social.css", 
+			"angular_mobile/css/mobile-angular-ui-hover.min.css",
+			"angular_mobile/css/mobile-angular-ui-base.min.css",
+			"angular_mobile/css/mobile-angular-ui-desktop.min.css",
+			"animsition/css/animsition.min.css"
+		]
+}
