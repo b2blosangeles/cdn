@@ -1,5 +1,5 @@
 {
-	"contentType": "text/javascript",
+	"commet": " Angularjs ",
 	"filelist":
 		[
 			"angular-1.4.5/angular.min.js", 
