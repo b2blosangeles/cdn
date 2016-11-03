@@ -1,5 +1,4 @@
 {
-	"contentType": "text/javascript",
 	"filelist":
 		[
 			"angular-1.4.5/angular.min.js", 
