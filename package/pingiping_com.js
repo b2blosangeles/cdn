@@ -1,5 +1,5 @@
 {
-	"commet": " Angularjs ",
+	"comment": " Angularjs ",
 	"filelist":
 		[
 			"angular-1.4.5/angular.min.js", 
